@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/select.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+		<script type="text/javascript" src="js/select-ui.min.js"></script>
+		<script type="text/javascript" src="editor/kindeditor.js"></script>
+		<script type="text/javascript">
+			KE.show({
+				id: 'content7',
+				cssPath: './index.css'
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				$(".select1").uedSelect({
+					width: 345
+				});
+				$(".select2").uedSelect({
+					width: 167
+				});
+				$(".select3").uedSelect({
+					width: 100
+				});
+			});
+		</script>
+		<script>
+			function checkname() {
+				var name = document.getElementById("rname").value;
+				var nameTip = document.getElementById("rnameTip");
+				var reg = /^[\u4e00-\u9fa5]{2,5}$/;
+				if(!reg.test(name)) {
+					nameTip.innerHTML = "姓名不合法!";
+					nameTip.style = "color:red";
+				} else {
+					nameTip.innerHTML = "";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="place">
+			<span>位置：</span>
+			<ul class="placeul">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">添加用户</a>
+				</li>
+			</ul>
+		</div>
+		<div class="formbody">
+			<div id="tab1" class="tabson">
+				<ul class="forminfo">
+					<li>
+						<label>姓名<b>*</b></label>
+						<input onblur="checkname()" id="rname" placeholder="2-5个汉字" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="rnameTip"></i>
+					</li>
+					<li>
+						<label>学号<b>*</b></label>
+						<input placeholder="请输入学号" name="Input" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>性别<b>*</b></label><cite>
+       						<input name="sex" type="radio" value="" checked="checked" />男&nbsp;&nbsp;&nbsp;&nbsp;
+       						<input name="sex" type="radio" value="" />女</cite>
+					</li>
+					<li>
+						<label>年级<b>*</b></label><cite>
+						<input type="text" list="gradelist" placeholder="请选择年级" class="dfinput" style="width:345px;" />
+						<datalist id="gradelist">
+　　							<option>2021级</option>
+　　							<option>2020级</option>
+							<option>2019级</option>
+							<option>2018级</option>
+						</datalist>
+					</li>
+					<li>
+						<label>籍贯<b>*</b></label><cite>
+						<input type="text" list="placelist" placeholder="请选择籍贯" class="dfinput" style="width:345px;" />
+						<datalist id="placelist">
+							<option>北京市</option>
+							<option>上海市</option>
+							<option>天津市</option>
+							<option>重庆市</option>
+							<option>黑龙江省</option>
+							<option>辽宁省</option>
+							<option>吉林省</option>
+							<option>河北省</option>
+							<option>河南省</option>
+							<option>湖北省</option>
+							<option>湖南省</option>
+							<option>山东省</option>
+							<option>山西省</option>
+							<option>陕西省</option>
+							<option>安徽省</option>
+							<option>浙江省</option>
+							<option>江苏省</option>
+							<option>福建省</option>
+							<option>广东省</option>
+							<option>海南省</option>
+							<option>四川省</option>
+							<option>云南省</option>
+							<option>贵州省</option>
+							<option>青海省</option>
+							<option>甘肃省</option>
+							<option>江西省</option>
+							<option>台湾省</option>
+							<option>内蒙古自治区</option>
+							<option>宁夏自治区</option>
+							<option>新疆维吾尔自治区</option>
+							<option>西藏自治区</option>
+							<option>广西壮族自治区</option>
+							<option>香港特别行政区</option>
+							<option>澳门特别行政区</option>
+						</datalist>
+					</li>
+					<li>
+						<label>电话<b>*</b></label>
+						<input placeholder="请输入电话" name="Input" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>院系<b>*</b></label>
+						<input type="text" list="departmentslist" placeholder="请选择院系" class="dfinput" style="width:345px;" />
+						<datalist id="departmentslist">
+　　							<option>软件学院</option>
+　　							<option>理学院</option>
+							<option>物联网学院</option>
+						</datalist>
+					</li>
+					<li>
+						<label>专业<b>*</b></label>
+						<input type="text" list="professionlist" placeholder="请选择专业" class="dfinput" style="width:345px;" />
+						<datalist id="professionlist">
+　　							<option>软件工程</option>
+　　							<option>应用数学</option>
+							<option>物联网</option>
+						</datalist>
+					</li>
+					<li>
+						<label>校内职务<b>*</b></label>
+						<input placeholder="例：班干部、学生会干部、社团干部、无" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>加入日期<b>*</b></label>
+						<input type="text" list="datelist" placeholder="请选择日期" class="dfinput" style="width:345px;" />
+						<datalist id="datelist">
+　　							<option>3月</option>
+　　							<option>6月</option>
+							<option>9月</option>
+							<option>12月</option>
+						</datalist>
+					</li>
+					<li>
+						<label>状态<b>*</b></label>
+						<input placeholder="例：正常、退出、毕业" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>实验室职务<b>*</b></label>
+						<input placeholder="例：秘书长、副秘书长、技术总监、项目经理、组长" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+
+					<li><label>备注<b>*</b></label>
+
+						<textarea id="content7" name="content" style="width:700px;height:250px;visibility:hidden;"></textarea>
+					</li>
+					<li><label>&nbsp;</label><input name="" type="button" class="btn" value="保存用户" /></li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<script type="text/javascript">
+				$("#usual1 ul").idTabs();
+			</script>
+
+			<script type="text/javascript">
+				$('.tablelist tbody tr:odd').addClass('odd');
+			</script>
+		</div>
+	</body>
+
+</html>
